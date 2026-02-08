@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+/* CONTAINER PADRÃO */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 20px 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(120deg, #1e293b, #334155);
+  color: white;
+  padding: 80px 0;
+}
+
+.hero-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+}
+.hero-text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 18px;
+}
+
+/* FORM */
+.hero-form {
+  flex: 1;
+}
+.hero-form form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.hero-form form input,
+.hero-form form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.hero-form form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  gap: 40px;
+  padding: 80px 0;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* BENEFITS */
+.benefits {
+  background: #f1f5f9;
+  padding: 80px 0;
+}
+
+.benefits-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.benefit {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* FAQ */
+.faq {
+  padding: 80px 0;
+}
+
+.faq-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
