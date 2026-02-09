@@ -50,6 +50,33 @@ O formulario envia os dados pra `backend/form.php`, que grava no MySQL. Pra func
 
 Se precisar mudar usuario, senha ou porta do MySQL, edite o arquivo `backend/connection.php`.
 
+**Passo a passo (Laragon):**
+
+1. Instale o Laragon (https://laragon.org/download/)
+2. Clique em `Start All` no painel do Laragon
+3. Copie a pasta do projeto para `C:\laragon\www\landing-ellos`
+4. Abra o menu `MySQL` > `phpMyAdmin` e importe `database/leads.sql`
+5. Vá em `Menu` > `Auto virtual hosts` e confirme `landing-ellos.test`
+6. Abra `http://landing-ellos.test` no navegador e teste o formulario
+7. Os registros ficam na tabela `leads` do banco `engageflow`
+
+Se aparecer **Forbidden**, normalmente e porque a pasta nao esta dentro de `C:\laragon\www` ou o servidor do Laragon nao foi iniciado. Confirme:
+
+- O Laragon esta com `Start All` ligado
+- A pasta do projeto esta em `C:\laragon\www\landing-ellos`
+- O acesso e por `http://landing-ellos.test` (nao por um caminho diferente)
+
+**HeidiSQL (passo a passo simples):**
+
+1. No Laragon, clique em `Start All`
+2. Abra o HeidiSQL
+3. Crie uma nova conexao: host `127.0.0.1`, usuario `root`, senha em branco, porta `3306`
+4. Conecte e clique com o botao direito na area de bancos > `Create new` > `Database`
+5. Crie o banco `engageflow`
+6. Clique no banco criado e abra a aba de consulta (Query)
+7. Abra o arquivo `database/leads.sql`, copie e cole o SQL na aba de consulta, depois execute
+8. Rode: `SELECT * FROM leads;` para conferir se os registros aparecem
+
 **Alternativa rapida (servidor embutido do PHP):**
 
 ```bash
@@ -57,6 +84,23 @@ php -S localhost:8000
 ```
 
 Acesse `http://localhost:8000` e teste o formulario.
+
+Se quiser automatizar: abra o terminal na pasta `landing-ellos`, rode `php -S localhost:8000` e deixe o terminal aberto. Enquanto o servidor estiver ativo, os dados do formulario sao enviados para `backend/form.php` e gravados no banco `engageflow`.
+
+### Onde ver os dados enviados
+
+- **Pelo phpMyAdmin** (caso tenha XAMPP ou Laragon): `http://localhost/phpmyadmin` > banco `engageflow` > tabela `leads`. Os registros aparecem em tempo real assim que o formulario é enviado.
+- **Atalho no phpMyAdmin:** clique em `engageflow` > `leads` > `Browse` (ou `Procurar`).
+- **Pelo terminal MySQL** (qualquer cliente):
+  ```sql
+  USE engageflow;
+  SELECT * FROM leads ORDER BY created_at DESC LIMIT 10;
+  ```
+
+### Exportar o banco para enviar
+
+- **phpMyAdmin:** selecione o banco `engageflow` > aba `Exportar` > formato `SQL` > `Exportar`.
+- **HeidiSQL:** clique no banco `engageflow` > `Export database as SQL`.
 
 ## Testando o banco
 
@@ -102,4 +146,8 @@ SELECT * FROM leads;
 
 ## Deploy
 
-O frontend esta publicado na Vercel. O formulario nao funciona no deploy (precisa de PHP rodando no servidor), mas toda a interface e animacoes funcionam normalmente.
+Repositorio: https://github.com/GabrielMarianoSa/teste-landingpage-EllosDesign
+
+Site publicado: https://landing-ellos.vercel.app
+
+O formulario nao funciona no deploy (precisa de PHP rodando no servidor), mas toda a interface e animacoes funcionam normalmente.
