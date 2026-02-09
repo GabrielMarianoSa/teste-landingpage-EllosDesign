@@ -1,11 +1,12 @@
 {
   "name": "landing-ellos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Landing page full-stack para o EngageFlow com Sass, PHP e MySQL.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch assets/sass/style.scss:assets/css/style.css"
+    "build:css": "sass assets/sass/style.scss assets/css/style.css",
+    "sass:watch": "sass --watch assets/sass/style.scss:assets/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/GabrielMarianoSa/teste-landingpage-EllosDesign#readme",
   "dependencies": {
-    "sass": "^1.97.3"
+    "sass": "^1.97.3",
+    "swiper": "^12.1.0"
   }
 }

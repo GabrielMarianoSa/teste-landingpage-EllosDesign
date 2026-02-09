@@ -2,86 +2,716 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="EngageFlow: CRM conversacional com IA que transforma conversas em vendas. Atendimento omnichannel inteligente."
+    />
+    <title>EngageFlow | CRM Conversacional com IA</title>
 
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icones -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Estilos do projeto -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- GSAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"
+      defer
+    ></script>
+
+    <!-- Swiper JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+    <!-- Script do projeto -->
+    <script src="assets/js/script.js" defer></script>
   </head>
 
-<body>
+  <body>
+    <!-- Fundo ambiente -->
+    <div class="bg-blur bg-blur--1" aria-hidden="true"></div>
+    <div class="bg-blur bg-blur--2" aria-hidden="true"></div>
 
-<header class="header">
-    <div class="container">
-        <h1 class="logo">SuaMarca</h1>
-        <span class="phone">(11) 99999-9999</span>
-    </div>
-</header>
+    <!-- ======= CABECALHO ======= -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#top" class="logo" aria-label="EngageFlow">
+          <span class="logo__icon">
+            <i class="ri-pulse-line"></i>
+          </span>
+          <span class="logo__text">Engage<b>Flow</b></span>
+        </a>
 
-<section class="hero">
-    <div class="container hero-content">
+        <nav class="header__nav" id="headerNav">
+          <a href="#about">Sobre</a>
+          <a href="#benefits">Benefícios</a>
+          <a href="#mockup">Mockup</a>
+          <a href="#testimonials">Depoimentos</a>
+        </nav>
 
-        <div class="hero-text">
-            <h2>Transforme seu negócio com marketing digital</h2>
-            <p>Aumente suas vendas e presença online com estratégias modernas.</p>
+        <a class="btn btn--primary btn--sm" href="#form">
+          Solicitar demo
+          <i class="ri-arrow-right-line"></i>
+        </a>
+
+        <button class="header__burger" id="menuToggle" aria-label="Menu">
+          <i class="ri-menu-3-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ======= HERO ======= -->
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__content" data-aos="fade-up">
+            <span class="badge">
+              <i class="ri-sparkling-2-fill"></i>
+              CRM com Inteligência Artificial
+            </span>
+
+            <h1 class="hero__title">
+              Transforme conversas em
+              <span class="gradient-text">vendas reais</span>
+            </h1>
+
+            <p class="hero__subtitle">
+              Centralize WhatsApp, Instagram e e-mail em um único painel. O
+              EngageFlow automatiza, qualifica e converte 24 horas por dia.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#form">
+                Começar agora
+                <i class="ri-arrow-right-line"></i>
+              </a>
+              <a class="btn btn--outline" href="#mockup">
+                <i class="ri-play-circle-line"></i>
+                Ver demonstração
+              </a>
+            </div>
+
+            <div class="hero__trust">
+              <div class="hero__trust-avatars">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <p><strong>+200 empresas</strong> já utilizam o EngageFlow</p>
+            </div>
+          </div>
+
+          <div
+            class="hero__visual"
+            id="form"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="hero__card">
+              <form id="leadForm" class="form" novalidate>
+                <div class="form__header">
+                  <i class="ri-calendar-check-line"></i>
+                  <div>
+                    <h3>Agende sua demonstração</h3>
+                    <p>Sem compromisso. Retorno em até 24h.</p>
+                  </div>
+                </div>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Seu nome completo"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail corporativo"
+                  required
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="WhatsApp com DDD"
+                  required
+                />
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Nome da empresa"
+                  required
+                />
+                <input
+                  type="text"
+                  name="website"
+                  class="hp-field"
+                  autocomplete="off"
+                  tabindex="-1"
+                />
+
+                <button type="submit" class="btn btn--primary btn--full">
+                  Solicitar demonstração gratuita
+                  <i class="ri-arrow-right-line"></i>
+                </button>
+
+                <p class="form__note">
+                  <i class="ri-lock-line"></i>
+                  Seus dados estão protegidos e não serão compartilhados.
+                </p>
+                <p class="form__status" id="formStatus" role="status"></p>
+              </form>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-form">
-            <form id="leadForm">
-                <h3>Solicite um contato</h3>
-
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="phone" placeholder="Telefone" required>
-                <textarea name="message" placeholder="Como podemos ajudar?"></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <!-- Metricas -->
+        <div class="container metrics">
+          <div class="metric">
+            <strong data-count="38" data-prefix="+" data-suffix="%"
+              >+38%</strong
+            >
+            <span>de conversão média</span>
+          </div>
+          <div class="metric">
+            <strong data-count="12" data-suffix=" canais">12 canais</strong>
+            <span>integrados em um painel</span>
+          </div>
+          <div class="metric">
+            <strong data-count="2" data-prefix="&lt;" data-suffix=" min"
+              >&lt;2 min</strong
+            >
+            <span>tempo médio de resposta</span>
+          </div>
+          <div class="metric">
+            <strong data-count="24" data-suffix="/7">24/7</strong>
+            <span>automação inteligente</span>
+          </div>
         </div>
+      </section>
 
-    </div>
-</section>
+      <!-- ======= SOBRE ======= -->
+      <section class="section about" id="about">
+        <div class="container about__grid">
+          <div class="about__content" data-aos="fade-right">
+            <span class="kicker">Conheça o EngageFlow</span>
+            <h2 class="section__title">
+              Vendas <span class="text--purple">potencializadas por IA</span>
+            </h2>
+            <p class="section__text">
+              Mais do que um CRM, o EngageFlow é o copiloto inteligente que
+              conecta cada conversa ao funil de vendas. Histórico completo,
+              sugestões automáticas e visibilidade total em tempo real.
+            </p>
+            <ul class="check-list">
+              <li>
+                <i class="ri-check-line"></i> Pipeline inteligente e
+                personalizável
+              </li>
+              <li>
+                <i class="ri-check-line"></i> Chatbot Flow integrado ao time
+                humano
+              </li>
+              <li>
+                <i class="ri-check-line"></i> Alertas e previsões
+                comportamentais com IA
+              </li>
+              <li>
+                <i class="ri-check-line"></i> Relatórios em tempo real por canal
+              </li>
+            </ul>
+            <a class="btn btn--outline" href="#form">
+              Quero conhecer
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
 
-<section class="about container">
-    <div class="about-image">
-        <img src="assets/img/imagemilustrativa.jpg" alt="Imagem ilustrativa">
-    </div>
-
-    <div class="about-text">
-        <h2>Quem Somos</h2>
-        <p>Somos especialistas em marketing digital e criação de sites que geram resultados reais.</p>
-    </div>
-</section>
-
-<section class="benefits">
-    <div class="container">
-        <h2>Com este serviço você:</h2>
-
-        <div class="benefits-grid">
-
-            <div class="benefit">Mais clientes</div>
-            <div class="benefit">Mais vendas</div>
-            <div class="benefit">Mais autoridade</div>
-            <div class="benefit">Presença digital</div>
-            <div class="benefit">Marketing estratégico</div>
-            <div class="benefit">Resultados mensuráveis</div>
-
+          <div class="about__visual" data-aos="zoom-in" data-aos-delay="100">
+            <div class="crm-mock">
+              <div class="crm-mock__header">
+                <span class="crm-mock__logo">
+                  <i class="ri-pulse-line"></i>
+                  CRM EngageFlow
+                </span>
+                <span class="crm-mock__live">
+                  <span class="pulse-dot"></span>
+                  Ao vivo
+                </span>
+              </div>
+              <div class="crm-mock__board">
+                <div class="crm-mock__col">
+                  <div class="crm-mock__col-title">Novos</div>
+                  <div class="crm-mock__card crm-mock__card--hot">
+                    <strong>Lead Solar</strong>
+                    <span>WhatsApp • 1 min</span>
+                  </div>
+                  <div class="crm-mock__card">
+                    <strong>Orion Tech</strong>
+                    <span>Instagram • 8 min</span>
+                  </div>
+                </div>
+                <div class="crm-mock__col">
+                  <div class="crm-mock__col-title">Qualificando</div>
+                  <div class="crm-mock__card">
+                    <strong>Vitta Saúde</strong>
+                    <span>Webchat • 12 min</span>
+                  </div>
+                </div>
+                <div class="crm-mock__col">
+                  <div class="crm-mock__col-title">Fechados</div>
+                  <div class="crm-mock__card crm-mock__card--won">
+                    <strong>Nova Era</strong>
+                    <span>E-mail • 1h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="crm-mock__footer">
+                <div class="crm-mock__stat">
+                  <i class="ri-line-chart-line"></i> Qualificação +32%
+                </div>
+                <div class="crm-mock__stat">
+                  <i class="ri-timer-flash-line"></i> Resposta rápida
+                </div>
+                <div class="crm-mock__stat">
+                  <i class="ri-robot-2-line"></i> IA ativa
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-<section class="faq container">
-    <h2>Perguntas Frequentes</h2>
+      <!-- ======= BENEFICIOS ======= -->
+      <section class="section benefits" id="benefits">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="kicker">Benefícios</span>
+            <h2 class="section__title section__title--center">
+              Tudo que você precisa para
+              <span class="text--blue">vender mais</span>
+            </h2>
+          </div>
 
-    <div class="faq-item">Quando vejo resultados?</div>
-    <div class="faq-item">Qual o prazo de entrega?</div>
-    <div class="faq-item">Vocês oferecem suporte?</div>
-</section>
+          <div class="benefits__grid">
+            <article class="benefit">
+              <div class="benefit__icon"><i class="ri-global-line"></i></div>
+              <h3>Omnichannel</h3>
+              <p>
+                WhatsApp, Instagram, e-mail e webchat em um único painel
+                unificado.
+              </p>
+            </article>
+            <article class="benefit">
+              <div class="benefit__icon"><i class="ri-robot-2-line"></i></div>
+              <h3>Automação com IA</h3>
+              <p>
+                Sugestões inteligentes, tags automáticas e follow-ups sem
+                esforço.
+              </p>
+            </article>
+            <article class="benefit">
+              <div class="benefit__icon">
+                <i class="ri-database-2-line"></i>
+              </div>
+              <h3>CRM Integrado</h3>
+              <p>
+                Histórico completo do lead, notas, status e linha do tempo da
+                negociação.
+              </p>
+            </article>
+            <article class="benefit">
+              <div class="benefit__icon">
+                <i class="ri-flashlight-line"></i>
+              </div>
+              <h3>Conversão Rápida</h3>
+              <p>Rotas automáticas para o vendedor certo, no momento ideal.</p>
+            </article>
+            <article class="benefit">
+              <div class="benefit__icon"><i class="ri-pie-chart-line"></i></div>
+              <h3>Relatórios</h3>
+              <p>
+                Dashboards claros com origem, taxa de conversão e performance do
+                time.
+              </p>
+            </article>
+            <article class="benefit">
+              <div class="benefit__icon">
+                <i class="ri-expand-up-down-line"></i>
+              </div>
+              <h3>Escalabilidade</h3>
+              <p>
+                Fluxos prontos para equipes em crescimento e operações
+                multi-unidade.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<footer class="footer">
-    <p>© 2026 SuaMarca</p>
-</footer>
+      <!-- ======= DEMO / MOCKUP ======= -->
+      <section class="section demo" id="mockup">
+        <div class="container demo__grid">
+          <div class="demo__visual" data-aos="fade-right">
+            <div class="chat-sim">
+              <div class="chat-sim__header">
+                <div class="chat-sim__avatar">
+                  <i class="ri-robot-2-fill"></i>
+                </div>
+                <div>
+                  <strong>Flow Assistant</strong>
+                  <span class="chat-sim__status">Online agora</span>
+                </div>
+              </div>
+              <div class="chat-sim__body" id="chatSimulation"></div>
+              <div class="chat-sim__input">
+                <span>Digite uma mensagem...</span>
+                <i class="ri-send-plane-fill"></i>
+              </div>
+            </div>
+          </div>
 
-</body>
+          <div class="demo__content" data-aos="fade-left">
+            <span class="kicker">Demonstração</span>
+            <h2 class="section__title">
+              Veja o Flow AI em <span class="text--purple">ação</span>
+            </h2>
+            <p class="section__text">
+              O chatbot qualifica leads, sugere respostas e registra tudo
+              automaticamente no CRM. Seu time foca no que importa: fechar
+              negócios.
+            </p>
 
+            <div class="demo__features">
+              <div class="demo__feature">
+                <i class="ri-chat-smile-2-line"></i>
+                <div>
+                  <h4>Chatbot inteligente</h4>
+                  <p>Responde, qualifica e encaminha leads 24/7.</p>
+                </div>
+              </div>
+              <div class="demo__feature">
+                <i class="ri-kanban-view-2"></i>
+                <div>
+                  <h4>Pipeline dinâmico</h4>
+                  <p>Arraste cards e acompanhe conversões em tempo real.</p>
+                </div>
+              </div>
+              <div class="demo__feature">
+                <i class="ri-magic-line"></i>
+                <div>
+                  <h4>Copiloto de respostas</h4>
+                  <p>Sugestões automáticas para respostas mais rápidas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= DEPOIMENTOS ======= -->
+      <section class="section testimonials" id="testimonials">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="kicker">Depoimentos</span>
+            <h2 class="section__title section__title--center">
+              Empresas que <span class="text--blue">confiam</span> no EngageFlow
+            </h2>
+          </div>
+
+          <div class="swiper testimonials__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial__stars">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "O EngageFlow revolucionou nosso atendimento. Reduzimos o
+                    tempo de resposta em 70% e dobramos a taxa de conversão em
+                    apenas dois meses."
+                  </p>
+                  <div class="testimonial__author">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/44.jpg"
+                      alt="Ana Carolina"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Ana Carolina</strong>
+                      <span>Diretora Comercial, Vitta Saúde</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial__stars">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "Antes do EngageFlow, perdíamos leads por falta de
+                    acompanhamento. Hoje, a IA cuida do follow-up e nosso time
+                    só fecha negócio."
+                  </p>
+                  <div class="testimonial__author">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/32.jpg"
+                      alt="Rafael Mendes"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Rafael Mendes</strong>
+                      <span>CEO, Orion Tech Solutions</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial__stars">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "A integração com WhatsApp e Instagram foi um divisor de
+                    águas. Centralizamos tudo e a equipe ficou 3x mais
+                    produtiva."
+                  </p>
+                  <div class="testimonial__author">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/68.jpg"
+                      alt="Mariana Lopes"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Mariana Lopes</strong>
+                      <span>Head de Vendas, Solar Labs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial__stars">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-half-fill"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "O pipeline visual é incrível. Consigo ver exatamente onde
+                    cada lead está e a IA sugere a próxima ação. Simplesmente
+                    funciona."
+                  </p>
+                  <div class="testimonial__author">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/75.jpg"
+                      alt="Thiago Ferreira"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Thiago Ferreira</strong>
+                      <span>Gerente Comercial, Nova Era Group</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial__stars">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                    ><i class="ri-star-fill"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "Implementamos o EngageFlow em uma semana e os resultados já
+                    apareceram no primeiro mês. O onboarding foi impecável."
+                  </p>
+                  <div class="testimonial__author">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/90.jpg"
+                      alt="Camila Santos"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong>Camila Santos</strong>
+                      <span>COO, Grupo Horizonte</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= DUVIDAS ======= -->
+      <section class="section faq" id="faq">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="kicker">Dúvidas</span>
+            <h2 class="section__title section__title--center">
+              Perguntas <span class="text--purple">frequentes</span>
+            </h2>
+          </div>
+
+          <div class="faq__list" data-aos="fade-up" data-aos-delay="100">
+            <details class="faq__item" open>
+              <summary>Em quanto tempo consigo ver resultados?</summary>
+              <p>
+                A maioria dos times percebe ganho de conversão nas primeiras 4
+                semanas de uso.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary>O EngageFlow funciona com WhatsApp e Instagram?</summary>
+              <p>
+                Sim! A plataforma integra WhatsApp, Instagram, e-mail, webchat e
+                outros canais em um único painel.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary>Existe suporte e onboarding?</summary>
+              <p>
+                Oferecemos onboarding guiado, treinamentos personalizados e
+                suporte dedicado durante toda a jornada.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary>Preciso de conhecimento técnico para usar?</summary>
+              <p>
+                Não. O EngageFlow foi projetado para ser intuitivo. Sua equipe
+                aprende a usar em minutos.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= CTA FINAL ======= -->
+      <section class="section cta">
+        <div class="container cta__inner" data-aos="zoom-in">
+          <h2>Pronto para transformar suas vendas?</h2>
+          <p>
+            Agende uma demonstração gratuita e descubra como o EngageFlow pode
+            acelerar seus resultados.
+          </p>
+          <a class="btn btn--white" href="#form">
+            Começar agora, sem custo
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= RODAPE ======= -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#top" class="logo">
+            <span class="logo__icon"><i class="ri-pulse-line"></i></span>
+            <span class="logo__text">Engage<b>Flow</b></span>
+          </a>
+          <p>
+            CRM conversacional com IA para vendas e atendimento omnichannel.
+          </p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="ri-linkedin-box-fill"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Produto</h4>
+          <a href="#about">Sobre</a>
+          <a href="#benefits">Benefícios</a>
+          <a href="#mockup">Demonstração</a>
+          <a href="#testimonials">Depoimentos</a>
+        </div>
+        <div class="footer__links">
+          <h4>Empresa</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#">Termos de uso</a>
+          <a href="#">Política de privacidade</a>
+        </div>
+        <div class="footer__links">
+          <h4>Contato</h4>
+          <a href="mailto:contato@engageflow.com"
+            ><i class="ri-mail-line"></i> contato@engageflow.com</a
+          >
+          <a href="tel:+5511901010101"
+            ><i class="ri-whatsapp-line"></i> (11) 90101-0101</a
+          >
+          <span><i class="ri-map-pin-line"></i> Guarulhos, SP</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 EngageFlow. Todos os direitos reservados.</p>
+      </div>
+    </footer>
   </body>
 </html>
